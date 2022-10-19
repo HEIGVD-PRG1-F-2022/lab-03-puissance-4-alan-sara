@@ -7,7 +7,10 @@ using namespace std;
 //
 
 int main(){
-    cout << "Puissance 4\nJouez en choisissant une colonne (de 0 a 6) pour y placer un jeton.\nGagnez en en alignant 4 identiques.\n" << endl;
+    cout << "===========" << endl;
+    cout << "Puissance 4" << endl;
+    cout << "===========" << endl;
+    cout << "Jouez en choisissant une colonne (de 0 a 6) pour y placer un jeton.\nGagnez en en alignant 4 identiques.\n" << endl;
     char quadrillage[6][7];
 
     for (int i = 0; i < 6; ++i) {
@@ -15,11 +18,15 @@ int main(){
             quadrillage[i][j] = ' ';
             cout << quadrillage[i][j] << "|";
         }
+
         cout << endl;
     }
+    cout << "0 1 2 3 4 5 6" << endl;
+
 
     bool partieFinie = false;
     bool joueur1 = true;
+    int tour = 0;
 
 
     while(partieFinie == false){
@@ -64,7 +71,9 @@ int main(){
                 cout << quadrillage[i][j] << "|";
             }
             cout << endl;
+            cout << " ";
         }
+        cout << " 0 1 2 3 4 5 6" << endl;
 
         //verification
         //lignes
@@ -106,16 +115,21 @@ int main(){
                 }
             }
         }
-
+        tour++;
         joueur1 = !joueur1;
+        cout << tour;
     }
 
     cout << "c'est fini" << endl;
-    if(joueur1){
+    if(joueur1 && tour < 41){
         cout << "le joueur 2 a gagne" << endl;
     }
-    else if(joueur1 == false){
+    else if(joueur1 == false && tour < 41){
         cout << "le joueur 1 a gagne" << endl;
+    }
+    else
+    {
+        cout << "Egalite" << endl;
     }
     return 0;
 }
