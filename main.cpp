@@ -23,9 +23,12 @@ int main(){
         bool colonnePleine = true;
 
         while(colonnePleine == true){
-            cout << "choisissez une colonne valide: ";
-            cin >> colonneChoisie;
-            // si pas chiffre valide, redemande
+
+
+            do {
+                cout << "choisissez une colonne valide: ";
+                cin >> colonneChoisie;
+            } while (colonneChoisie > 6 || colonneChoisie < 0);
 
             for (int i = 5; i >= 0; i--) {
                 if(quadrillage[i][colonneChoisie] == ' '){
