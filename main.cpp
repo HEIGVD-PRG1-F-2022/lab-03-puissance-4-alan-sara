@@ -24,7 +24,6 @@ int main(){
 
         while(colonnePleine == true){
 
-
             do {
                 cout << "choisissez une colonne valide: ";
                 cin >> colonneChoisie;
@@ -64,6 +63,26 @@ int main(){
         for(int k = 0; k < 7; k++) {
             for (int l = 5; l >= 3; l--) {
                 if(quadrillage[l][k] == quadrillage[l-1][k] && quadrillage[l-1][k] == quadrillage[l-2][k] && quadrillage[l-2][k] == quadrillage[l-3][k] && quadrillage[l][k] != ' '){
+                    //gagné
+                    cout << "gagne" << endl;
+                }
+            }
+        }
+
+        //diagonales gauche-droite
+        for(int k = 0; k <= 3; k++) {
+            for (int l = 5; l >= 3; l--) {
+                if(quadrillage[l][k] == quadrillage[l-1][k+1] && quadrillage[l-1][k+1] == quadrillage[l-2][k+2] && quadrillage[l-2][k+2] == quadrillage[l-3][k+3] && quadrillage[l][k] != ' '){
+                    //gagné
+                    cout << "gagne" << endl;
+                }
+            }
+        }
+
+        //diagonales droite-gauche
+        for(int k = 6; k >= 3; k--) {
+            for (int l = 5; l >= 3; l--) {
+                if(quadrillage[l][k] == quadrillage[l-1][k-1] && quadrillage[l-1][k-1] == quadrillage[l-2][k-2] && quadrillage[l-2][k-2] == quadrillage[l-3][k-3] && quadrillage[l][k] != ' '){
                     //gagné
                     cout << "gagne" << endl;
                 }
