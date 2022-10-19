@@ -18,20 +18,40 @@ int main(){
         cout << endl;
     }
 
-    while(true){
+    bool partieFinie = false;
+    bool joueur1 = true;
+
+
+    while(partieFinie == false){
         int colonneChoisie;
         bool colonnePleine = true;
 
+        int joueurActuel;
+        if(joueur1){
+            joueurActuel = 1;
+        }
+        else{
+            joueurActuel = 2;
+        }
+
         while(colonnePleine == true){
 
+            char symbole;
+            if(joueur1){
+                symbole = 'o';
+            }
+            else{
+                symbole = 'x';
+            }
+
             do {
-                cout << "choisissez une colonne valide: ";
+                cout << "joueur " << joueurActuel << ", choisissez une colonne valide: ";
                 cin >> colonneChoisie;
             } while (colonneChoisie > 6 || colonneChoisie < 0);
 
             for (int i = 5; i >= 0; i--) {
                 if(quadrillage[i][colonneChoisie] == ' '){
-                    quadrillage[i][colonneChoisie] = 'o';
+                    quadrillage[i][colonneChoisie] = symbole;
                     colonnePleine = false;
                     break;
                 }
@@ -41,11 +61,9 @@ int main(){
         for (int i = 0; i < 6; ++i) {
             cout << '|';
             for (int j = 0; j < 7; ++j) {
-                // quadrillage[i][j] = ' ';
                 cout << quadrillage[i][j] << "|";
             }
             cout << endl;
-            //cout << " _ _ _ _ _ _ _" << endl;
         }
 
         //verification
@@ -54,7 +72,7 @@ int main(){
             for (int j = 0; j <= 3; ++j) {
                 if(quadrillage[i][j] == quadrillage[i][j+1] && quadrillage[i][j+1] == quadrillage[i][j+2] && quadrillage[i][j+2] == quadrillage[i][j+3] && quadrillage[i][j] != ' '){
                     //gagné
-                    cout << "gagne" << endl;
+                    partieFinie = true;
                 }
             }
         }
@@ -64,7 +82,7 @@ int main(){
             for (int l = 5; l >= 3; l--) {
                 if(quadrillage[l][k] == quadrillage[l-1][k] && quadrillage[l-1][k] == quadrillage[l-2][k] && quadrillage[l-2][k] == quadrillage[l-3][k] && quadrillage[l][k] != ' '){
                     //gagné
-                    cout << "gagne" << endl;
+                    partieFinie = true;
                 }
             }
         }
@@ -74,7 +92,7 @@ int main(){
             for (int l = 5; l >= 3; l--) {
                 if(quadrillage[l][k] == quadrillage[l-1][k+1] && quadrillage[l-1][k+1] == quadrillage[l-2][k+2] && quadrillage[l-2][k+2] == quadrillage[l-3][k+3] && quadrillage[l][k] != ' '){
                     //gagné
-                    cout << "gagne" << endl;
+                    partieFinie = true;
                 }
             }
         }
@@ -84,11 +102,20 @@ int main(){
             for (int l = 5; l >= 3; l--) {
                 if(quadrillage[l][k] == quadrillage[l-1][k-1] && quadrillage[l-1][k-1] == quadrillage[l-2][k-2] && quadrillage[l-2][k-2] == quadrillage[l-3][k-3] && quadrillage[l][k] != ' '){
                     //gagné
-                    cout << "gagne" << endl;
+                    partieFinie = true;
                 }
             }
         }
 
+        joueur1 = !joueur1;
+    }
+
+    cout << "c'est fini" << endl;
+    if(joueur1){
+        cout << "le joueur 2 a gagne" << endl;
+    }
+    else if(joueur1 == false){
+        cout << "le joueur 1 a gagne" << endl;
     }
     return 0;
 }
