@@ -20,14 +20,14 @@ void affichageQuadrillage(char quadrillage[6][7], int tour){
             if (tour == 0) {
                 quadrillage[i][j] = ' ';      // s'assure que tous les elements du tableau soient "vides" en debut de partie
             }
-            if(quadrillage[i][j] == 'o' ){
+            if(quadrillage[i][j] == 'o' ){  // Decide quelle couleur afficher
                 SetConsoleTextAttribute(console_color, 3);
             }
             else{
                 SetConsoleTextAttribute(console_color, 12);
             }
             cout << quadrillage[i][j];
-            SetConsoleTextAttribute(console_color, 7);
+            SetConsoleTextAttribute(console_color, 7); // remet la couleur en blanc
             cout <<  "|";
         }
         cout << endl;
