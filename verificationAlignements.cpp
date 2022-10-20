@@ -1,4 +1,8 @@
-
+/*
+ * Noms       : Alan Sottile - Sara Camassa
+ * Date rendu : 24.10.2022
+ * Labo       : Puissance 4
+ */
 bool verificationAlignements(char quadrillage[6][7], bool& partieFinie) {
 
     //lignes

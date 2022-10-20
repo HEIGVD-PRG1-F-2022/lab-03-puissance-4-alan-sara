@@ -1,3 +1,8 @@
+/*
+ * Noms       : Alan Sottile - Sara Camassa
+ * Date rendu : 24.10.2022
+ * Labo       : Puissance 4
+ */
 #include <iostream>
 
 using namespace std;

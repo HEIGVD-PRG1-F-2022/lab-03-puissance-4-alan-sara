@@ -1,6 +1,8 @@
-//
-//
-//
+/*
+ * Noms       : Alan Sottile - Sara Camassa
+ * Date rendu : 24.10.2022
+ * Labo       : Puissance 4
+ */
 
 #ifndef MANDELBROT_CHOISIRCOLONNE_H
 #define MANDELBROT_CHOISIRCOLONNE_H
