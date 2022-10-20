@@ -3,4 +3,4 @@ project(Mandelbrot)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Mandelbrot main.cpp)
+add_executable(Mandelbrot main.cpp choisirColonne.h choisirColonne.cpp verificationAlignements.h verificationAlignements.cpp affichageQuadrillage.h affichageQuadrillage.cpp)
